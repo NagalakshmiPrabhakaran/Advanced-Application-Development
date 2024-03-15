@@ -1,0 +1,123 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+body, h1, h2, p, button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: palevioletred;
+}
+
+/* Navigation styles */
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: right;
+}
+
+nav ul li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #fefefe;
+  color: #333;
+}
+
+/* Landing page styles */
+.landing-page {
+  background-image: url('https://images.pexels.com/photos/3611882/pexels-photo-3611882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.header-content {
+  text-align: center;
+  padding-top: 100px;
+  color: #111111;
+}
+
+header h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #ff4545;
+}
+
+main {
+  padding: 50px;
+  text-align: center;
+}
+
+.event-images {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.event-images img {
+  width: 30%;
+  border-radius: 8px;
+}
+
+.event-details {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-details h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.event-details p {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
