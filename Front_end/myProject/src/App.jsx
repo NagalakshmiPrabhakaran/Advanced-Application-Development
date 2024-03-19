@@ -1,20 +1,53 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Login from './Components/Pages/Login'
-import Register from './Components/Pages/Register'
-import Frontpage from './Components/Pages/Frontpage'
-import LandingPage from './Components/Pages/LandingPage'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+import './App.css';
+import Home from './Components/Pages/Home';
+import {Routes,Route, BrowserRouter as Router} from "react-router-dom";
+import Login from './Components/Pages/Login';
+import Register from './Components/Pages/Register';
+import AdminPage from './Components/Pages/AdminPage';
+import Crud from './Components/Pages/Crud';
+import Theme from './Components/Pages/Theme';
+import UserDashboard from './Components/Pages/Userdash';
+import EventForm from './Components/Pages/EventForm';
+import Userdash from './Components/Pages/Userdash';
+import User from './Components/Pages/User';
+import React from 'react';
+import LoadingIndicator from './Components/Pages/LoadingIndicator';
+import { Suspense } from 'react';
+
+const Admin = React.lazy(() => import('./Components/Pages/AdminPage'));
+
 function App() {
-  // const [count, setCount] = useState(0)
+  const [events, setEvents] = useState([]);
+
+  const addEvent = (newEvent) => {
+    setEvents([...events, newEvent]);
+  };
+
+  
 
   return (
     <>
-      <div>
-      <LandingPage/>
       
-      </div>
+      <Router>
+      <Suspense fallback={<LoadingIndicator/>}>
+      <Routes>
+
+      <Route path='/' element={<Home/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
+      <Route path='/admin' element={<AdminPage/>}/>
+      <Route path='/crud' element={<Crud/>}/>
+      <Route path='/theme' element={<Theme/>}/>
+      <Route path='/book' element={<User/>}/>
+      <Route path='/eventform' element={<EventForm addEvent={addEvent}/>} />
+      <Route path='/userdash' element={<Userdash events={events}/>} />
+      </Routes>
+      </Suspense>
+      </Router>
+    
       
     </>
   )

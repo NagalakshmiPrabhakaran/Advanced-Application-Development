@@ -1,60 +1,101 @@
-import React from 'react';
-import './Login.css';
-import {
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-  MDBBtn,
-  MDBIcon,
-  MDBInput,
-  MDBCheckbox
-}
-from 'mdb-react-ui-kit';
+import React from 'react'
+import './Login.css'
+import { useState } from 'react';
 
-function App() {
+import { Link, useNavigate } from 'react-router-dom';
+const Login = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  });
+const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.username.trim()) {
+      newErrors.username = 'Username is required';
+    }
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters long';
+    }
+    if(formData.username==="Nagalakshmi"&& formData.password==="nagu123"){
+      navigate("/Admin")
+    }
+    else{
+      navigate("/userdash");
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+};
+const handleSubmit = (e) => {
+    e.preventDefault();
+    const isValid = validateForm();
+    if (isValid) {
+      // You can submit the form data to your server or perform other actions here.
+      setIsSubmitted(true);
+    }
+  };
+const handleNavigate= () => {
+    navigate("/register");
+  };
   return (
-    <MDBContainer fluid className="p-3 my-5">
-
-      <MDBRow>
-
-        <MDBCol col='10' md='6'>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
-        </MDBCol>
-
-        <MDBCol col='4' md='6'>
-
-
-          <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
-          <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
-
-
-          <div className="d-flex justify-content-between mx-4 mb-4">
-            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-            <a href="!#">Forgot password?</a>
+    <div className='login'>
+    <>
+    <h2></h2>
+    <div className="container-login" id="container">
+      <div className="form-container sign-up-container">
+       
+      </div>
+      <div className="form-container-login sign-in-container">
+        <form action="#" onSubmit={handleSubmit}>
+          <h1>Sign in</h1>
+          <div className="social-container">
+            <a href="#" className="social">
+              <i className="fab fa-facebook-f" />
+            </a>
+            <a href="#" className="social">
+              <i className="fab fa-google-plus-g" />
+            </a>
+            <a href="#" className="social">
+              <i className="fab fa-linkedin-in" />
+            </a>
           </div>
-
-          <MDBBtn className="mb-4 w-100" size="lg">Sign in</MDBBtn>
-
-          <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0">OR</p>
+          <span>or use your account</span>
+          <div className='input-field'>
+            
+            <input className='LoginInput' type='text' placeholder='Username' value={formData.username}
+            onChange={(e) => setFormData({ ...formData, username: e.target.value })}/>
+            </div>
+            {errors.username && <p className="error">{errors.username}</p>}
+            <div className='input-field'>
+            <input className='LoginInput' type='password'   placeholder='Password' value={formData.password}
+            onChange={(e) => setFormData({ ...formData, password: e.target.value })}/>
+            </div>
+            {errors.password && <p className="error">{errors.password}</p>}
+          <button  className = "bollon">Sign In</button>
+        </form>
+      </div>
+      <div className="overlay-container">
+        <div className="overlay">
+          <div className="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button className="ghost" id="signUp">
+              <Link to ='/register'>Sign Up</Link>
+            </button>
           </div>
-
-          <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#3b5998'}}>
-            <MDBIcon fab icon="facebook-f" className="mx-2"/>
-            Continue with facebook
-          </MDBBtn>
-
-          <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#55acee'}}>
-            <MDBIcon fab icon="twitter" className="mx-2"/>
-            Continue with twitter
-          </MDBBtn>
-
-        </MDBCol>
-
-      </MDBRow>
-
-    </MDBContainer>
-  );
+        </div>
+      </div>
+    </div>
+    
+  </>
+  
+    </div>
+  )
 }
 
-export default App;
+export default Login

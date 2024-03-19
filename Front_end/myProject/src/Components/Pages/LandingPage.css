@@ -13,36 +13,7 @@ body {
 }
 
 /* Navigation styles */
-nav {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-
-nav ul li {
-  float: right;
-}
-
-nav ul li a {
-  display: block;
-  color: #fff;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  background-color: #fefefe;
-  color: #333;
-}
 
 /* Landing page styles */
 .landing-page {
@@ -56,11 +27,18 @@ nav ul li a:hover {
   text-align: center;
   padding-top: 100px;
   color: #111111;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  
 }
 
 header h1 {
-  font-size: 48px;
+  font-size: 60px;
   margin-bottom: 20px;
+  font-weight: bolder;
+  text-shadow: 8px 8px 8px rgb(248, 246, 246);
+
 }
 
 header p {
@@ -114,10 +92,52 @@ main {
   margin-bottom: 15px;
   font-size: 18px;
 }
+.video-class
+{
+ position: absolute;
+ left:34%;
+}
 
 footer {
   text-align: center;
   padding: 20px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
+}
+/* Footer.css */
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
 }
