@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import EventDetails from './EventDetails';
 import './User.css';
-// import Navbar from './Components/Pages/Navbar'
+import Theme from './Theme';
+import { Link } from 'react-router-dom';
+import LandingPage from './LandingPage';
+import Nav from './Nav'
+import Footer from './Footer'
 function Bookevent() {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -14,40 +18,28 @@ function Bookevent() {
   return selectedEvent ? (
     <EventDetails event={selectedEvent} />
   ) : (
-   <div>
+   
 
-    <div className="book-event-page-event">
+    <div className="book-event">
+    <Nav/>
+    <br/>
+    <br/>
+    <br/>
       <h1 className="event-title">Book Your Events</h1>
-      <div className="image-grid-event">
-        <div className="image-item-event item1" onClick={() => handleImageClick({id: 1 , name:  "KSV BIRTHDAY EVENTS" , image :"https://www.diytomake.com/wp-content/uploads/2021/03/How-To-Design-And-Decorate-A-Room-for-the-Perfect-Party.jpg"})}>
-        <span className="event-name">KSV BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item2" onClick={() => handleImageClick({id:2 , name:"TS BIRTHDAY EVENTS" , image:"https://i.pinimg.com/originals/f8/10/9a/f8109a552f5e7f18c40f066032592d00.jpg"})}>
-          <span className="event-name">TS BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item3" onClick={() => handleImageClick({id:3 , name: "TTT BIRTHDAY EVENTS", image:"https://i.pinimg.com/originals/69/ed/45/69ed455435f492a9f0c76e5a2776382e.jpg"})}>
-          <span className="event-name">TTT BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item4" onClick={() => handleImageClick({id:4 , name:"BMS BIRTHDAY EVENTS", image:"https://1.bp.blogspot.com/-ebisd03_rl4/XPnTQl_WzkI/AAAAAAAAAfY/dEAsv_wn7-M7TC5TnwMwJnOoeAQkB039gCLcBGAs/s1600/rainbowfirstbirthdayparty.jpg"})}>
-          <span className="event-name">BMS BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item5" onClick={() => handleImageClick({id:5 , name:"VS BIRTHDAY EVENTS" ,image:"https://i.pinimg.com/originals/69/c3/03/69c30385c2e2ab1b27064cecd4902235.jpg"})}>
-          <span className="event-name">VS BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item6" onClick={() => handleImageClick({id:6, name:"SVK BIRTHDAY EVENTS" , image:"https://i.pinimg.com/originals/4e/5c/90/4e5c9060ebc64da507db5a07c35376b8.jpg"})}>
-          <span className="event-name">SVK BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item7" onClick={() => handleImageClick({id:7, name:"VVS BIRTHDAY EVENTS" , image:"https://i.pinimg.com/originals/9d/89/9b/9d899b3159c4153995d2d0b8fc30d3e7.jpg"})}>
-          <span className="event-name">VVS BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item8" onClick={() => handleImageClick({id:8, name:"LPK BIRTHDAY EVENTS", image:"https://cdn.diys.com/wp-content/uploads/2021/04/DIY-Birthday-decor-1.jpg"})}>
-          <span className="event-name">LPK BIRTHDAY EVENTS</span>
-        </div>
-        <div className="image-item-event item9" onClick={() => handleImageClick({id:9, name:"SSS BIRTHDAY EVENTS", image:"https://www.togetherv.com/blog/wp-content/uploads/2021/04/shutterstock_2062979228.jpg"})}>
-          <span className="event-name">SSS BIRTHDAY EVENTS</span>
-        </div>       
-      </div>
-    </div>
+      <main className='theme'>
+      <section className="event-images">
+        <img src="https://images.pexels.com/photos/7100327/pexels-photo-7100327.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Birthday Event 1" />
+        <img src="https://images.pexels.com/photos/7180795/pexels-photo-7180795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Birthday Event 2" />
+        <img src="https://images.pexels.com/photos/7099893/pexels-photo-7099893.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Birthday Event 3" />
+      </section>
+      <section className="event-images">
+        <img src="https://images.pexels.com/photos/7328245/pexels-photo-7328245.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Birthday Event 1" />
+        <img src="https://images.pexels.com/photos/10024453/pexels-photo-10024453.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Birthday Event 2" />
+        <img src="https://images.pexels.com/photos/5610325/pexels-photo-5610325.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Birthday Event 3" />
+      </section>
+      <button><Link to = '/eventform'>Book</Link></button>
+    </main>
+    <div><Footer/></div>
     </div>
   );
 }

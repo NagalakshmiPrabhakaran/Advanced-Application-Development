@@ -1,81 +1,23 @@
 import React from 'react'
 import './Admin.css'
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
+
 const AdminPage = () => {
   return (
     <div>
     <>
-    {/* Navigation*/}
-    <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-      id="mainNav"
-    >
-      <a className="navbar-brand" href="index.html">
-        DreamDay
-      </a>
-      <button
-        className="navbar-toggler navbar-toggler-right"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarResponsive"
-        aria-controls="navbarResponsive"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="navbarResponsive">
-        <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
-          <li
-            className="nav-item"
-            data-toggle="tooltip"
-            data-placement="right"
-            title="Dashboard"
-          >
-          <br/>
-            <a className="nav-link" href="index.html">
-              <i className="fa fa-fw fa-dashboard" />
-              <span className="nav-link-text">Dashboard</span>
-            </a>
-          </li>
-          <li
-            className="nav-item"
-            data-toggle="tooltip"
-            data-placement="right"
-            title="Dashboard"
-          >
-          <br/>
-            <Link to = '/crud' className="nav-link" href="index.html">
-              
-              <span className="nav-link-text">Actions</span>
-            </Link>
-          </li>
-        </ul>
-        
-        <ul className="navbar-nav ml-auto">
     
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              data-toggle="modal"
-              data-target="#exampleModal"
-            >
-              <i className="fa fa-fw fa-sign-out" />
-              Logout
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    {/* Navigation*/}
+    <Sidebar/>
     <div className="content-wrapper">
       <div className="container-fluid">
         {/* Breadcrumbs*/}
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-          <br/>
-          <br/>
-          <br/>
-            <a href="#">Dashboard</a>
+          
+            <h1 href="#">Dashboard</h1>
           </li>
           
         </ol>
@@ -151,11 +93,7 @@ const AdminPage = () => {
         <div className="row">
           <div className="col-lg-8">
             {/* Example Bar Chart Card*/}
-            <div className="card mb-3">
-              
-              
-              
-            </div>
+            
             {/* Card Columns Example Social Feed*/}
             <div className="mb-0 mt-4">
               <i className="fa fa-newspaper-o" /> News Feed
@@ -167,7 +105,7 @@ const AdminPage = () => {
                 <a href="#">
                   <img
                     className="card-img-top img-fluid w-100"
-                    src="https://images.pexels.com/photos/6299291/pexels-photo-6299291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    src="https://images.pexels.com/photos/10032950/pexels-photo-10032950.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt=""
                   />
                 </a>
@@ -262,49 +200,7 @@ const AdminPage = () => {
         {/* Example DataTables Card*/}
         
       </div>
-      
-      {/* Logout Modal*/}
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex={-1}
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Ready to Leave?
-              </h5>
-              <button
-                className="close"
-                type="button"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div className="modal-body">
-              Select "Logout" below if you are ready to end your current session.
-            </div>
-            <div className="modal-footer">
-              <button
-                className="btn btn-secondary"
-                type="button"
-                data-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <a className="btn btn-primary" href="login.html">
-                Logout
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div>
   </>
   

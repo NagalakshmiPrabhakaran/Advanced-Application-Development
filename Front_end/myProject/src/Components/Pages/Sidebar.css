@@ -1,39 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
+
 body {
-    background-color: #fbfbfb;
-  }
-  @media (min-width: 991.98px) {
-    main {
-      padding-left: 240px;
-    }
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    padding: 58px 0 0; /* Height of navbar */
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 240px;
-    z-index: 600;
-  }
-  
-  @media (max-width: 991.98px) {
-    .sidebar {
-      width: 100%;
-    }
-  }
-  .sidebar .active {
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-  }
-  
-  .sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: 0.5rem;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  }
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: rgb(92, 72, 72);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: rgb(red, green, blue);
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+    font-size: 25px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav-side {
+}
+
+#sidebar .nav-side a {
+  background: none;
+  border-bottom: 1px solid #455a64;
+  color: #cfd8dc;
+  font-size: 25px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav-side a:hover {
+  background: none;
+  color: #eceff1;
+}
+
+#sidebar .nav-side a i {
+  margin-right: 16px;
+}

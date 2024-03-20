@@ -47,7 +47,7 @@ const EventForm = ({ addEvent }) => {
     setEventType('');
     setNumberOfPeople('');
     setFoodType('');
-    navigateTo('/')
+    navigateTo('/userdash')
   };
 
   return (

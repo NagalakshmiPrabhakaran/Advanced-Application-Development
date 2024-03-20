@@ -6,7 +6,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className='footer-body'>
+    <div id='footer-body-landing'>
     <>
     <>
     {/* Footer */}

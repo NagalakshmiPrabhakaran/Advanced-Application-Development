@@ -1,5 +1,5 @@
 import React from 'react'
-import './Navbar.css'
+import './Nav.css'
 import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
@@ -13,8 +13,9 @@ const Navbar = () => {
       </ul>
       <ul>
       <li><Link to='/'>Logout</Link></li>
-      <li><Link to='/eventform'>Register</Link></li>
-        
+        <li><Link to='/userdash'>Profile</Link></li>
+        <li><Link to='/food'>Food</Link></li>
+        <li><Link to='/themetableuser'>Theme</Link></li>
       </ul>
     </nav>
     </section>  

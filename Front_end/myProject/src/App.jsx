@@ -14,8 +14,21 @@ import EventForm from './Components/Pages/EventForm';
 import Userdash from './Components/Pages/Userdash';
 import User from './Components/Pages/User';
 import React from 'react';
-import LoadingIndicator from './Components/Pages/LoadingIndicator';
+import LoadingIndicator from './LoadingIndicator';
 import { Suspense } from 'react';
+import Footer from './Components/Pages/Footer';
+import Sidebar from './Components/Pages/Sidebar';
+import Nav from './Components/Pages/Nav';
+import Navbar from './Components/Pages/Navbar';
+import Food from './Components/Pages/Food';
+import FoodCrud from './Components/Pages/FoodCrud';
+import EventDetails from './Components/Pages/EventDetails';
+import ViewBookedevent from './Components/Pages/ViewBookedEvent';
+import ThemeTable from './Components/Pages/ThemeTable';
+import FoodTable from './Components/Pages/FoodTable';
+import ThemeUser from './Components/Pages/ThemeUser';
+
+
 
 const Admin = React.lazy(() => import('./Components/Pages/AdminPage'));
 
@@ -41,12 +54,23 @@ function App() {
       <Route path='/admin' element={<AdminPage/>}/>
       <Route path='/crud' element={<Crud/>}/>
       <Route path='/theme' element={<Theme/>}/>
-      <Route path='/book' element={<User/>}/>
+      <Route path='/themetable' element={<ThemeTable/>}/>
+      <Route path='/foodtable' element={<FoodTable/>}/>
+      <Route path='/themetableuser' element={<ThemeUser/>}/>
+      <Route path='/user' element={<User/>}/>
+      <Route path='/side' element={<Sidebar/>}/>
+      <Route path='/nav' element={<Navbar/>}/>
+      <Route path='/food' element={<Food/>}/>
+      <Route path='/view' element={<ViewBookedevent/>}/>
+      
+      <Route path='/foodcrud' element={<FoodCrud/>}/>
+      <Route path='/eventdetails' element={<EventDetails/>}/>
       <Route path='/eventform' element={<EventForm addEvent={addEvent}/>} />
       <Route path='/userdash' element={<Userdash events={events}/>} />
       </Routes>
       </Suspense>
       </Router>
+      
     
       
     </>

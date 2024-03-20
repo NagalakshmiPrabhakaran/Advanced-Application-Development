@@ -7,6 +7,7 @@ import image4 from './birthday.jpg';
 import { Link, useNavigate } from 'react-router-dom'; // Import useHistory from react-router-dom
 import Nav from './Nav';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 
 const UserDashboard = ({ events: initialEvents }) => {
 
@@ -50,10 +51,7 @@ const UserDashboard = ({ events: initialEvents }) => {
     <div className="dashboard-container">
     
       <Nav/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
+       
       {/* User Dashboard */}
       <div className="user-dashboard-content" style={{ display: activeTab === 'bookings' ? 'block' : 'none' }}>
         <h2>My Bookings</h2>
@@ -115,39 +113,46 @@ const UserDashboard = ({ events: initialEvents }) => {
         
           <div className="image-item">
             <img src="https://images.pexels.com/photos/7100276/pexels-photo-7100276.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Description 1" />
-            <p>Description 1</p>
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
           <div className="image-item">
             <img src="https://images.pexels.com/photos/4262423/pexels-photo-4262423.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Description 1" />
-            <p>Description 1</p>
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
           <div className="image-item">
             <img src="https://images.pexels.com/photos/6718007/pexels-photo-6718007.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Description 1" />
-            <p>Description 1</p>
+            
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
           <div className="image-item">
             <img src="https://images.pexels.com/photos/6148527/pexels-photo-6148527.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Description 2" />
-            <p>Description 2</p>
+            
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
           <div className="image-item">
             <img src={image3} alt="Description 3" />
-            <p>Description 3</p>
+            
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
           <div className="image-item">
             <img src="https://images.pexels.com/photos/7337021/pexels-photo-7337021.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Description 4" />
-            <p>Description 4</p>
+            
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
           <div className="image-item">
             <img src="https://images.pexels.com/photos/8104171/pexels-photo-8104171.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Description 4" />
-            <p>Description 4</p>
+            
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
           <div className="image-item">
             <img src="https://images.pexels.com/photos/7600428/pexels-photo-7600428.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Description 4" />
-            <p>Description 4</p>
+            
+            <p><Link to = '/eventdetails' className='link'>Description 1</Link></p>
           </div>
+          
         </div>
       )}
-    </div>
+      </div>
   );
 };
 

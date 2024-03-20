@@ -1,38 +1,45 @@
 import React from 'react';
 import './EventDetails.css';
+import pic1 from './pic1.jpg';
+import { Link } from 'react-router-dom';
 
-import { Link } from 'react-router-dom'; 
-
-function EventDetails({ event }) {
-  // Destructuring the event object
-  const { id, name, image } = event;
-  const rating = 4.5;
-  const totalPrice = 15000;
-  const place = "Coimbatore";
-  const description= "Welcome to KSV Birthday Events! We're your one-stop destination for creating unforgettable birthday celebrations. Whether you're planning a milestone birthday, a surprise party for a loved one, or a themed extravaganza, we're here to turn your vision into reality. Our team of experienced event planners specializes in curating unique and personalized experiences tailored to your preferences and budget. From selecting the perfect venue to coordinating entertainment, catering, and decor, we handle every aspect of your event with meticulous attention to detail. Explore our range of customizable packages and themes, from elegant soirées to fun-filled adventures, designed to make your special day truly memorable. Let us take the stress out of planning so you can relax and enjoy every moment of your birthday celebration. Contact us today to start planning the ultimate birthday bash!";
-  const imageClassName = `event-image-${id}`;
-
+const EventDetails = () => {
   return (
-    <div>
-      
-      <div className="event-details-page">
-        <div className="image-and-details">
-          <img src={image} alt={name} className={imageClassName} />
-          <div className="details">
-            <div className="detail-item"><b>Description:</b> {description}</div>
-            <div className="detail-item"><b>Rating:</b> {rating}/5</div>
-            <div className="detail-item"><b>Total Price:</b> ${totalPrice}</div>
-            <div className="detail-item"><b>Place:</b> {place}</div>
-            {/* Pass the event name as search params to the BookDetails page */}
-            <Link to={{ pathname: "/bookdetails", search: `?eventName=${name}` }}>
-              <button className="book-event-button">Book Event</button>
-            </Link>
-          </div>
+    <div className="description-container">
+      <div className="text-container">
+        <h2 className='des'>Events</h2>
+        <p className='des'>
+          Join us for an exciting event filled with fun and learning. We'll have guest speakers,
+          interactive workshops, and plenty of networking opportunities. Don't miss out on this
+          chance to connect with like-minded individuals and expand your horizons!Experience the
+          magic of our annual Music Festival, where rhythm and melody converge to create unforgettable
+          memories. Join us for three days of non-stop entertainment featuring an eclectic lineup of 
+          chart-topping artists, emerging talents, and local favorites. From pulsating beats to soulful melodies,
+          our festival promises to cater to every musical taste.
+          Indulge your senses in a culinary journey with an array of gourmet food trucks offering delectable 
+          treats from around the world. Savor mouthwatering dishes while enjoying the live performances or simply 
+          relax in our chill-out zones scattered throughout the venue.
+          Immerse yourself in the vibrant atmosphere as Central Park transforms into a haven for music lovers. 
+          Whether you're dancing under the stars, exploring artisanal stalls, or connecting with fellow enthusiasts, 
+          there's something for everyone at Music Festival 2024.
+        </p>
+        <div className="event-details">
+          <p  className='des'><strong>Date:</strong> March 25, 2024</p>
+          <p  className='des'><strong>Time:</strong> 10:00 AM - 5:00 PM</p>
+          <p  className='des'><strong>Location:</strong> 123 Event Avenue, City, Country</p>
         </div>
-        <h1 className="title">{name}</h1>
+        <br/>
+        <button className="register-button">Register</button>
+        <br/>
+        <br/>
+        
+        <button className="register-button"><Link to = '/userdash'>Back</Link></button>
+      </div>
+      <div className="image-container">
+        <img src={pic1} alt="Description" />
       </div>
     </div>
   );
-}
+};
 
 export default EventDetails;

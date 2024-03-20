@@ -24,7 +24,9 @@
     left: 0%;
     
   }
-  
+.link{
+    color: #131313;
+  }
   .sidebar-dash ul li {
     padding: 90px;
 }

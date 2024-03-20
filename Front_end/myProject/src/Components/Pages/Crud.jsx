@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Crud.css'; // Assuming you have a CSS file for styling
+import Navbar from './Navbar';
 
 const DataTableExample = () => {
   const [data, setData] = useState([]);
@@ -59,7 +60,8 @@ const DataTableExample = () => {
   };
 
   return (
-    <div className="card mb-3">
+      <div className="card mb-3">
+      
       <div className="card-header">
         <i className="fa fa-table" /> <h3>Data Table</h3> 
       </div>
