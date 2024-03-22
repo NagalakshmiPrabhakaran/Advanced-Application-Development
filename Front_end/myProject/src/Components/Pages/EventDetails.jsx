@@ -29,8 +29,7 @@ const EventDetails = () => {
           <p  className='des'><strong>Location:</strong> 123 Event Avenue, City, Country</p>
         </div>
         <br/>
-        <button className="register-button">Register</button>
-        <br/>
+       
         <br/>
         
         <button className="register-button"><Link to = '/userdash'>Back</Link></button>
