@@ -1,4 +1,4 @@
-package com.example.dreamday.Model;
+package com.example.dreamday.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,17 +10,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "user_table")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
-
+@Table(name="UserEve")
+public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
+    private int cost;
+    private String planner;
     private String name;
-    private String email;
-    private String password;
-    private String roles;
+    private String contact;
+   
 }
