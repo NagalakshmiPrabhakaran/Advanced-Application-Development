@@ -1,4 +1,4 @@
-package com.example.dreamday.Service
+package com.example.dreamday.Service;
 
 import java.util.List;
 import java.util.Optional;
