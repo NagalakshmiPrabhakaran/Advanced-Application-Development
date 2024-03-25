@@ -27,6 +27,7 @@ import ViewBookedevent from './Components/Pages/ViewBookedEvent';
 import ThemeTable from './Components/Pages/ThemeTable';
 import FoodTable from './Components/Pages/FoodTable';
 import ThemeUser from './Components/Pages/ThemeUser';
+import Success from './Components/Pages/Success';
 
 
 
@@ -61,8 +62,7 @@ function App() {
       <Route path='/side' element={<Sidebar/>}/>
       <Route path='/nav' element={<Navbar/>}/>
       <Route path='/food' element={<Food/>}/>
-      <Route path='/view' element={<ViewBookedevent/>}/>
-      
+      <Route path='/view' element={<ViewBookedevent/>}/>    
       <Route path='/foodcrud' element={<FoodCrud/>}/>
       <Route path='/eventdetails' element={<EventDetails/>}/>
       <Route path='/eventform' element={<EventForm addEvent={addEvent}/>} />

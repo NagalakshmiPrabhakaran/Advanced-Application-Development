@@ -11,41 +11,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.dreamday.entity.Food;
 import com.example.dreamday.entity.Theme;
-import com.example.dreamday.repository.ThemeRepo;
-import org.springframework.web.bind.annotation.RequestParam;
-
+import com.example.dreamday.repository.FoodRepo;
 
 @RestController
-@RequestMapping("/products")
-public class ThemeController {
+@RequestMapping("/food")
+public class FoodController {
      @Autowired
-    private ThemeRepo rep;
-    @GetMapping("/gtheme")
-    // @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    public List<Theme> getAllTheProducts() {
-        return rep.findAll();
+    private FoodRepo repository;
+    @GetMapping("/gall")
+    @PreAuthorize("hasAuthority('admin')")
+    public List<Food> getAllTheProducts() {
+        return repository.findAll();
     }
-    @PostMapping("/addtheme")
-    @PreAuthorize("hasAuthority('user')")
-    public void postAllTheProducts(@RequestBody Theme e) {
-        rep.save(e);
+   
+    @PostMapping("/addfood")
+    @PreAuthorize("hasAuthority('admin')")
+    public void postAllTheProducts(@RequestBody Food e) {
+        repository.save(e);
+    }
+     @PutMapping("/updateFood")
+    @PreAuthorize("hasAuthority('admin')")
+    public void updTheme(@RequestBody Food t) {
+        repository.saveAndFlush(t);;
     }
     @DeleteMapping("/del/{id}")
     @PreAuthorize("hasAuthority('admin')")
     public void delTheme(@PathVariable int id) {
-        rep.deleteById(id);;
+        repository.deleteById(id);;
     }
-    @PutMapping("/updateTheme")
-    @PreAuthorize("hasAuthority('user')")
-    public void updTheme(@RequestBody Theme t) {
-        rep.saveAndFlush(t);;
-    }
-    
-    
 }
-
-
-

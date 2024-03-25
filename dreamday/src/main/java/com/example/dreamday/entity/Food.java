@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="UserEve")
-public class Event {
+@Table(name="AdminFood")
+public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String Item1;
+    private String Item2;
+    private String Item3;
     private int cost;
-    private String plan;
-    private String name;
-    private String contact;
    
 }

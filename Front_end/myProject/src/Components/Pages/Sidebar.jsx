@@ -22,7 +22,7 @@ const Sidebar = () => {
           </a>
         </li>
         <li>
-          <a href="/theme">
+          <a href="/themetable">
             Theme
           </a>
         </li>

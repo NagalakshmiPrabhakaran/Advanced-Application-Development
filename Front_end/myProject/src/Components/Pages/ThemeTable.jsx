@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const ThemeTable = () => {
   return (
       <div>
@@ -19,10 +19,9 @@ const ThemeTable = () => {
         <tr>
         <th>Id</th>
             <th> Theme Name</th>
-            <th>Baloon</th>
-            <th>Date</th>
-            <th>Colour</th>
+            <th>Addons</th>
             <th>Amount</th>
+            <th>Actions</th>
             
           </tr>
         </thead>
@@ -30,10 +29,9 @@ const ThemeTable = () => {
         <tr>
         <th>Id</th>
             <th>Theme Name</th>
-            <th>Baloon</th>
-            <th>Date</th>
-            <th>Start date</th>
+            <th>Addons</th>
             <th>Amount</th>
+            <th>Actions</th>
             
           </tr>
         </tfoot>
@@ -41,29 +39,22 @@ const ThemeTable = () => {
           <tr>
           <td>1</td>
           <td>Theme Blue</td>
-          <td>Yes</td>
-          <td>2011/04/25</td>
-          <td>Blue</td>
-            <td>$320,800</td>
+          <td>Pool Party</td>
+            <td>11500</td>
+            
           </tr>
           
           <tr>
           <td>2</td>
             <td>Circus</td>
-            <td>Yes</td>
-            
-            <td>2012/03/29</td>
-            <td>Multi Colour</td>
-            <td>$433,060</td>
+            <td>Multi Chocolate</td>
+            <td>9000</td>
           </tr>
           <tr>
           <td>3</td>
             <td>OutSpace</td>
-            <td>Yes</td>
-            
-            <td>2008/11/28</td>
-            <td>Pink</td>
-            <td>$162,700</td>
+            <td>Tent Effect</td>
+            <td>10200</td>
           </tr>
           
          
@@ -71,6 +62,7 @@ const ThemeTable = () => {
       </table>
     </div>
   </div>
+  <button> <Link to ="/Admin">Back </Link></button>
     </div>
   )
 }

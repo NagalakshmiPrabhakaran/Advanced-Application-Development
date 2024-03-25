@@ -55,7 +55,7 @@ public class SecurityConfig {
                         .requestMatchers("/products/welcome", "/products/new", "/products/authenticate", "/swagger-ui/**",
                                 "/swagger-ui.html/", "/services/event",
                                 "/v3/api-docs/**").permitAll())
-                .authorizeHttpRequests(requests -> requests.requestMatchers("/products/**", "/events/**")
+                .authorizeHttpRequests(requests -> requests.requestMatchers("/products/**", "/events/**","/food/**")
                         .authenticated())
                 .sessionManagement(management -> management
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
